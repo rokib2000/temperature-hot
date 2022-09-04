@@ -9,7 +9,7 @@ const loadData = (city) => {
 
 // Display All data
 const displayData = (data) => {
-  console.log(data);
+  //   console.log(data);
   setInnerTextById("city", data.name);
   setInnerTextById("temperature", data.main.temp);
   setInnerTextById("condition", data.weather[0].main);
@@ -22,11 +22,18 @@ const setInnerTextById = (id, data) => {
   temperature.innerText = data;
 };
 
-// search data
+// search data by search button
 document.getElementById("btn-search").addEventListener("click", function () {
   const searchField = document.getElementById("search-field");
   loadData(searchField.value);
   searchField.value = "";
 });
+
+// search data by Enter
+// document.getElementById("search-field").addEventListener("keypress", function (event) {
+//   if (event.key === "Enter") {
+//     console.log("enter");
+//   }
+// });
 
 loadData("Dhaka");
